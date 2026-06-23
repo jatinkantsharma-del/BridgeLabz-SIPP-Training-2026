@@ -10,7 +10,6 @@ public class Username_Validator {
         }
         return isValid(username, index+1);
     }
-
     public static void main(String[] args) {
         System.out.println(isValid("abcdxyz", 0));
         System.out.println(isValid("abcD123", 0));

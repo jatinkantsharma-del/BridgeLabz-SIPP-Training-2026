@@ -1,0 +1,11 @@
+
+===== REPORT CARD =====
+Name: Hemant
+Average Marks: 87.67
+----------------------
+Name: Rahul
+Average Marks: 80.00
+----------------------
+Name: Priya
+Average Marks: 92.00
+----------------------
