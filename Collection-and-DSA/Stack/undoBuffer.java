@@ -1,0 +1,47 @@
+class UndoBuffer {
+
+    private String[] data;
+    private int top;
+
+    public UndoBuffer(int maxDepth) {
+        data = new String[maxDepth];
+        top = -1;
+    }
+
+    // Push a new edit
+    public boolean push(String edit) {
+        if (isFull()) {
+            return false;
+        }
+        data[++top] = edit;
+        return true;
+    }
+
+    // Undo last edit
+    public String pop() {
+        if (isEmpty()) {
+            throw new RuntimeException("Nothing to undo");
+        }
+        return data[top--];
+    }
+
+    // View last edit
+    public String peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Undo buffer is empty");
+        }
+        return data[top];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == data.length - 1;
+    }
+
+    public int size() {
+        return top + 1;
+    }
+}
